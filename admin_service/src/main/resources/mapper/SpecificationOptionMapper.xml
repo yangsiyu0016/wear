@@ -46,10 +46,12 @@
     <!-- 添加规格选项 -->
     <insert id="addOption">
         insert into w_specification_option (
+            id,
             optionName,
             specId,
             orders
         )values (
+            #{specificationOption.id},
             #{specificationOption.optionName},
             #{specificationOption.specId},
             #{specificationOption.orders}

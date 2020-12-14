@@ -25,12 +25,14 @@
     <!-- 添加商品图片 -->
     <insert id="addGoodsPic">
         insert into w_goods_picture(
+            id,
             goodsId,
             picUrl,
             picLevel,
             isMain,
             ctime
         ) values (
+            #{goodsPicture.id},
             #{goodsPicture.goodsId},
             #{goodsPicture.picUrl},
             #{goodsPicture.picLevel},

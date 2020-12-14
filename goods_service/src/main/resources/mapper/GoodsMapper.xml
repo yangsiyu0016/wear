@@ -53,6 +53,7 @@
     <!-- 添加商品 -->
     <insert id="addGoods">
         insert into w_goods(
+            id,
             goodsName,
             sellPoint,
             defaultItemId,
@@ -64,6 +65,7 @@
             category2Id,
             isDelete
         ) values (
+            #{goods.id},
             #{goods.goodsName},
             #{goods.sellPoint},
             #{goods.defaultItemId},
