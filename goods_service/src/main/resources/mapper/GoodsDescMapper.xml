@@ -20,12 +20,14 @@
     <!-- 添加商品详情 -->
     <insert id="addDesc">
         insert into w_goods_desc (
+            id,
             goodsId,
             introduction,
             specificationItems,
             packageList,
             saleService
         ) values (
+            #{goodsDesc.id},
             #{goodsDesc.goodsId},
             #{goodsDesc.introduction},
             #{goodsDesc.specificationItems},

@@ -43,9 +43,11 @@
     <!-- 添加类目 -->
     <insert id="addCate">
         insert into w_category(
+            id,
             parentId,
             name
         ) values (
+            #{category.id},
             #{category.parentId},
             #{category.name}
         )

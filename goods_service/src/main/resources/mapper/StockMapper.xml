@@ -18,10 +18,12 @@
     <!-- 添加库存 -->
     <insert id="addStock">
         insert  into w_stock(
+            id,
             goodsId,
             number,
             sellNumber
         ) values (
+            #{stock.id},
             #{stock.goodsId},
             #{stock.number},
             #{stock.sellNumber}

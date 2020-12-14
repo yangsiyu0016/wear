@@ -35,9 +35,11 @@
     <!-- 添加 -->
     <insert id="addBrand">
         insert into w_brand(
+            id,
             name,
             firstChar
         ) values (
+            #{brand.id},
             #{brand.name},
             #{brand.firstChar}
         )

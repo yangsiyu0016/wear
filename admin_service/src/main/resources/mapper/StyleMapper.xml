@@ -34,8 +34,10 @@
     <!-- 添加风格 -->
     <insert id="addStyle">
         insert into w_style(
+            id,
             styleName
         ) values (
+            #{style.id},
             #{style.styleName}
         )
     </insert>

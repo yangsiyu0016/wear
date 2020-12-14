@@ -39,8 +39,10 @@
     <!-- 添加规格 -->
     <insert id="addSpec">
         insert into w_specification(
+            id,
             specName
         ) values (
+            #{specification.id},
             #{specification.specName}
         )
     </insert>

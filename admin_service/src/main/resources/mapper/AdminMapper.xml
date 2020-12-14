@@ -44,6 +44,7 @@
     <!-- 添加后台用户 -->
     <insert id="addAdmin">
         insert into w_admin(
+            id,
             username,
             phone,
             email,
@@ -55,6 +56,7 @@
             telphone,
             isenable
         ) values (
+            #{admin.id},
             #{admin.username},
             #{admin.phone},
             #{admin.email},
