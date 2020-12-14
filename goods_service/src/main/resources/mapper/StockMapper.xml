@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.goods_service.mapper.StockMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.goods.Stock">
+        <id column="id" property="id"/>
+        <result column="goodsId" property="goodsId"/>
+        <result column="number" property="number"/>
+        <result column="sellNumber" property="sellNumber"/>
+    </resultMap>
+
+    <!-- 根据goodsid获取库存 -->
+    <select id="getStockByGoodsId" resultMap="BaseResultMap">
+        select * from w_stock where goodsId = #{goodsId}
+    </select>
+
+    <!-- 添加库存 -->
+    <insert id="addStock">
+        insert  into w_stock(
+            goodsId,
+            number,
+            sellNumber
+        ) values (
+            #{stock.goodsId},
+            #{stock.number},
+            #{stock.sellNumber}
+        )
+    </insert>
+
+    <!-- 修改库存 -->
+    <update id="editStock">
+        update w_stock set number = #{stock.number}, sellNumber = #{stock.sellNumber}
+    </update>
+
+    <!-- 删除库存 -->
+    <delete id="deleteStock">
+        delete from w_stock where goodsId = #{goodsId}
+    </delete>
+
+</mapper>

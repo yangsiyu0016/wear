@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.goods_service.mapper.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.goods.Goods">
+        <id column="id" property="id"/>
+        <result column="goodsName" property="goodsName"/>
+        <result column="sellPoint" property="sellPoint"/>
+        <result column="defaultItemId" property="defaultItemId"/>
+        <result column="auditStatus" property="auditStatus"/>
+        <result column="isMarketable" property="isMarketable"/>
+        <result column="brandId" property="brandId"/>
+        <result column="caption" property="caption"/>
+        <result column="category1Id" property="category1Id"/>
+        <result column="category2Id" property="category2Id"/>
+        <result column="price" property="price"/>
+        <result column="mainPic" property="mainPic"/>
+        <result column="isDelete" property="isDelete"/>
+        <association property="brand" column="brandId" select="com.wangong.admin_service.mapper.BrandMapper.getBrandById"/>
+        <association property="category1" column="category1Id" select="com.wangong.admin_service.mapper.CategoryMapper.getCateById"/>
+        <association property="category2" column="category2Id" select="com.wangong.admin_service.mapper.CategoryMapper.getCateById"/>
+        <association property="stock" column="id" select="com.wangong.goods_service.mapper.StockMapper.getStockByGoodsId"/>
+        <association property="goodsDesc" column="id" select="com.wangong.goods_service.mapper.GoodsDescMapper.getDescByGoodsId"/>
+        <collection property="goodsPicture" column="id" select="com.wangong.goods_service.mapper.GoodsPictureMapper.getGoodsPicByGoodsId"/>
+    </resultMap>
+
+    <!-- 获取所有商品 -->
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from w_goods
+        <if test="sort != null">
+            order by ${sort}
+        </if>
+        where isDelete = #{isDelete}
+        <if test="keywords != null">
+            goodsName like concat('%', #{keywords}, '%') or sellPoint like concat('%', #{keywords}, '%') or caption like concat('%', #{keywords}, '%')
+        </if>
+        <if test="start != null and size != null">
+            limit ${start}, ${size}
+        </if>
+    </select>
+
+    <!-- 获取总条数 -->
+    <select id="getCount" resultType="java.lang.Long">
+        select count(id) count from w_goods where isDelete = #{isDelete}
+    </select>
+
+    <!-- 根据id获取商品 -->
+    <select id="getGoodsById" resultMap="BaseResultMap">
+        select * from w_goods where id = #{id}
+    </select>
+
+    <!-- 添加商品 -->
+    <insert id="addGoods">
+        insert into w_goods(
+            goodsName,
+            sellPoint,
+            defaultItemId,
+            auditStatus,
+            isMarketable,
+            brandId,
+            caption,
+            category1Id,
+            category2Id,
+            isDelete
+        ) values (
+            #{goods.goodsName},
+            #{goods.sellPoint},
+            #{goods.defaultItemId},
+            #{goods.auditStatus},
+            #{goods.isMarketable},
+            #{goods.brand.id},
+            #{goods.caption},
+            #{goods.category1.id},
+            #{goods.category2.id},
+            #{goods.isDelete}
+        )
+    </insert>
+
+    <!-- 更新商品信息 -->
+    <update id="editGoods">
+        update w_goods set
+            goodsName = #{goods.goodsName},
+            sellPoint = #{goods.sellPoint},
+            defaultItemId = #{goods.defaultItemId},
+            brandId = #{goods.brand.id},
+            caption = #{goods.caption},
+            category1Id = #{goods.category1.id},
+            category2Id = #{goods.category2.id}
+        where id = #{goods.id}
+    </update>
+
+    <!-- 是否上架 -->
+    <update id="isMarketable">
+        update w_goods set isMarketable = #{isMarketable}
+        where id = #{id}
+    </update>
+
+    <!-- 是否删除 -->
+    <update id="isDelete">
+        update w_goods set isDelete = #{isDelete}
+        where id = #{id}
+    </update>
+
+    <!-- 删除商品 -->
+    <delete id="deleteGoods">
+        delete from w_goods where id in
+        <foreach item="id" close=")" open="(" separator="," collection="ids">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

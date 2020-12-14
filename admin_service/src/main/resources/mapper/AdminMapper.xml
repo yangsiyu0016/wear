@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.admin_service.mapper.AdminMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.admin.Admin">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+        <result column="realName" property="realName"/>
+        <result column="ctime" property="ctime"/>
+        <result column="utime" property="utime"/>
+        <result column="telphone" property="telphone"/>
+        <result column="isenable" property="isenable"/>
+        <association property="position" column="positionId" select="com.wangong.admin_service.mapper.PositionMapper.getPositionById"/>
+    </resultMap>
+
+    <!-- 分页获取数据 -->
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from w_admin where 1 = 1 order by ctime desc
+        <if test="start != null and size != null">
+            limit ${start}, ${size}
+        </if>
+    </select>
+
+    <!-- 获取总条数 -->
+    <select id="getCount" resultType="java.lang.Long">
+        select count(id) count from w_admin
+    </select>
+
+    <!-- 根据id获取后台用户 -->
+    <select id="getAdminById" resultMap="BaseResultMap">
+        select * from w_admin where id = #{id} limit 1
+    </select>
+
+    <!-- 根据用户名,email,phone获取后台用户 -->
+    <select id="getAdminByUsername" resultMap="BaseResultMap">
+        select * from w_admin where username = #{username} limit 1
+    </select>
+
+    <!-- 添加后台用户 -->
+    <insert id="addAdmin">
+        insert into w_admin(
+            username,
+            phone,
+            email,
+            password,
+            salt,
+            realName,
+            ctime,
+            utime,
+            telphone,
+            isenable
+        ) values (
+            #{admin.username},
+            #{admin.phone},
+            #{admin.email},
+            #{admin.password},
+            #{admin.salt},
+            #{admin.realName},
+            #{admin.ctime},
+            #{admin.utime},
+            #{admin.telphone},
+            #{admin.isenable}
+        )
+    </insert>
+
+    <!-- 更新用户信息 -->
+    <update id="editAdmin">
+        update w_admin set realName = #{admin.realName}, telphone = #{admin.telphone}, utime = #{admin.utime} where id = #{id}
+    </update>
+
+    <!-- 修改密码 -->
+    <update id="editPassword">
+        update w_admin set
+            password = #{password}
+        where
+            username = #{username}
+    </update>
+
+    <!--  是否启用  -->
+    <update id="editEnable">
+        update w_admin set
+            isenable = #{isenable}
+        where
+            id = #{id}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteAdminById">
+        delete from w_admin where id = #{id}
+    </delete>
+
+</mapper>

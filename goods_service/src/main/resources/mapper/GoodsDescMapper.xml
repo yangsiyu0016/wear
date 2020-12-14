@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.goods_service.mapper.GoodsDescMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.goods.GoodsDesc">
+        <id column="id" property="id"/>
+        <result column="goodsId" property="goodsId"/>
+        <result column="introduction" property="introduction"/>
+        <result column="specificationItems" property="specificationItems"/>
+        <result column="packageList" property="packageList"/>
+        <result column="saleService" property="saleService"/>
+    </resultMap>
+
+    <!-- 根据商品id获取商品详情 -->
+    <select id="getDescByGoodsId" resultMap="BaseResultMap">
+        select * from w_goods_desc where goodsId = #{goodsId}
+    </select>
+
+    <!-- 添加商品详情 -->
+    <insert id="addDesc">
+        insert into w_goods_desc (
+            goodsId,
+            introduction,
+            specificationItems,
+            packageList,
+            saleService
+        ) values (
+            #{goodsDesc.goodsId},
+            #{goodsDesc.introduction},
+            #{goodsDesc.specificationItems},
+            #{goodsDesc.packageList},
+            #{goodsDesc.saleService}
+        )
+    </insert>
+
+    <!-- 更新商品详情 -->
+    <update id="editDesc">
+        update w_goods_desc set
+            goodsId = #{goodsDesc.goodsId},
+            introduction = #{goodsDesc.introduction},
+            specificationItems = #{goodsDesc.specificationItems},
+            packageList = #{goodsDesc.packageList},
+            saleService = #{goodsDesc.saleService}
+        where id = #{goodsDesc.id}
+    </update>
+
+    <!-- 删除详情 -->
+    <delete id="deleteDesc">
+        delete from w_goods_desc where goodsId = #{goodsId}
+    </delete>
+
+</mapper>

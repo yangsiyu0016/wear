@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.user_service.mapper.AreaMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.area.Area">
+        <id column="id" property="id"/>
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="parentId" property="parentId"/>
+    </resultMap>
+    <!-- 获取树形结构 -->
+    <select id="getSubTreeData" resultMap="BaseResult">
+		select * from w_area where  parentId =#{id}
+	</select>
+    <!-- 获取树形结构 -->
+    <select id="getTreeData" resultMap="BaseResult">
+		select * from w_area where parentId ='0' or parentId is null
+	</select>
+    <!-- 根据父级id获取数据 -->
+    <select id="getAreaByParentId" resultMap="BaseResult">
+		select * from w_area where parentId=#{parentId}
+	</select>
+    <!-- 根据id获取区域 -->
+    <select id="getAreaById" resultMap="BaseResult">
+		select * from w_area where id=#{id}
+	</select>
+
+</mapper>

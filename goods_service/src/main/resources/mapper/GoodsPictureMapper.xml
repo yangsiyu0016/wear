@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.goods_service.mapper.GoodsPictureMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.goods.GoodsPicture">
+        <id column="id" property="id"/>
+        <result column="goodsId" property="goodsId"/>
+        <result column="picUrl" property="picUrl"/>
+        <result column="picLevel" property="picLevel"/>
+        <result column="isMain" property="isMain"/>
+        <result column="ctime" property="ctime"/>
+    </resultMap>
+
+    <!-- 根据商品id获取 -->
+    <select id="getGoodsPicByGoodsId" resultMap="BaseResultMap">
+        select * from w_goods_picture where goodsId = #{goodsId}
+    </select>
+
+    <!-- 根据id获取商品图片 -->
+    <select id="getGoodsPicById" resultMap="BaseResultMap">
+        select * from w_goods_picture where id = #{id}
+    </select>
+
+    <!-- 添加商品图片 -->
+    <insert id="addGoodsPic">
+        insert into w_goods_picture(
+            goodsId,
+            picUrl,
+            picLevel,
+            isMain,
+            ctime
+        ) values (
+            #{goodsPicture.goodsId},
+            #{goodsPicture.picUrl},
+            #{goodsPicture.picLevel},
+            #{goodsPicture.isMain},
+            #{goodsPicture.ctime}
+        )
+    </insert>
+
+    <!-- 更新商品图片 -->
+    <update id="editGoodsPic">
+        update w_goods_picture set
+            picUrl = #{goodsPicture.picUrl},
+            picLevel = #{goodsPicture.picLevel},
+            isMain = #{goodsPicture.isMain}
+        where id = #{goodsPicture.id}
+    </update>
+
+    <!-- 删除商品图片 -->
+    <delete id="deleteGoodsPic">
+        delete from w_goods_picture where id = #{id}
+    </delete>
+
+    <!-- 根据商品id删除商品图片 -->
+    <delete id="deleteGoodsPicByGoodsId">
+        delete from w_goods_picture where goodsId = #{goodsId}
+    </delete>
+
+</mapper>

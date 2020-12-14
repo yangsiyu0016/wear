@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="admin_consumer"/>
+    <dubbo:registry address="zookeeper://192.168.2.45:2181"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
+    <dubbo:reference id="adminService" check="false" interface="com.wangong.common.service.AdminService"/>
+    <dubbo:reference interface="com.wangong.common.service.MenuService" id="menuService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.PositionService" id="positionService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.SpecificationService" id="specificationService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.SpecificationOptionService" id="specificationOptionService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.BrandService" id="brandService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.StyleService" id="styleService" check="false"/>
+    <dubbo:reference interface="com.wangong.common.service.CategoryService" id="categoryService" check="false"/>
+
+    <dubbo:annotation package="com.wangong.admin_web.controller"/>
+</beans>

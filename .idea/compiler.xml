@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="admin_web" />
+        <module name="common" />
+        <module name="order_service" />
+        <module name="admin_service" />
+        <module name="user_web" />
+        <module name="goods_web" />
+        <module name="order_web" />
+        <module name="user_service" />
+        <module name="goods_service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin_service" target="1.8" />
+      <module name="admin_web" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="goods_service" target="1.8" />
+      <module name="goods_web" target="1.8" />
+      <module name="order_service" target="1.8" />
+      <module name="order_web" target="1.8" />
+      <module name="user_service" target="1.8" />
+      <module name="user_web" target="1.8" />
+      <module name="wear" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin_service" options="-parameters" />
+      <module name="admin_web" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="goods_service" options="-parameters" />
+      <module name="goods_web" options="-parameters" />
+      <module name="order_service" options="-parameters" />
+      <module name="order_web" options="-parameters" />
+      <module name="user_service" options="-parameters" />
+      <module name="user_web" options="-parameters" />
+      <module name="wear" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.order_service.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.order.Order">
+        <id column="id" property="id"/>
+        <result column="payment" property="payment"/>
+        <result column="paymentType" property="paymentType"/>
+        <result column="postFee" property="postFee"/>
+        <result column="status" property="status"/>
+        <result column="createTime" property="createTime"/>
+        <result column="updateTime" property="updateTime"/>
+        <result column="paymentTime" property="paymentTime"/>
+        <result column="consignTime" property="consignTime"/>
+        <result column="endTime" property="endTime"/>
+        <result column="closeTime" property="closeTime"/>
+        <result column="shippingName" property="shippingName"/>
+        <result column="shippingCode" property="shippingCode"/>
+        <result column="userId" property="userId"/>
+        <result column="buyerMessage" property="buyerMessage"/>
+        <result column="buyerRate" property="buyerRate"/>
+        <result column="receiverId" property="receiverId"/>
+        <result column="sourceType" property="sourceType"/>
+        <result column="sellerId" property="sellerId"/>
+    </resultMap>
+
+    <!-- 分页获取数据 -->
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from w_order where 1 = 1 order by createTime desc
+        <if test="start != null and size != null">
+            limit ${start}, ${size}
+        </if>
+    </select>
+
+    <!-- 获取总条数 -->
+    <select id="getCount" resultType="java.lang.Long">
+        select count(id) count from w_order
+    </select>
+
+</mapper>

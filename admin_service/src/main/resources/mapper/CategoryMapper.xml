@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.admin_service.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.category.Category">
+        <id column="id" property="id"/>
+        <result column="parentId" property="parentId"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <!-- 分页获取数据 -->
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from w_category where parentId = 0 order by id desc
+        <if test="start != null and size != null">
+            limit ${start}, ${size}
+        </if>
+    </select>
+
+    <!-- 根据父级id获取类目 -->
+    <select id="getCateByParentId" resultMap="BaseResultMap">
+        select * from w_category where parentId = #{id}
+    </select>
+
+    <!-- 根据类目名称获取类目数量 -->
+    <select id="getCountByName" resultType="java.lang.Long">
+        select count(id) count from w_category where name = #{name}
+    </select>
+
+    <!-- 获取总条数 -->
+    <select id="getCount" resultType="java.lang.Long">
+        select count(id) count from w_category where 1 = 1
+        <if test="parentId != null">
+            and parentId = #{parentId}
+        </if>
+    </select>
+
+    <!-- 根据id获取类目 -->
+    <select id="getCateById" resultMap="BaseResultMap">
+        select * from w_category where id = #{id} limit 1
+    </select>
+
+    <!-- 添加类目 -->
+    <insert id="addCate">
+        insert into w_category(
+            parentId,
+            name
+        ) values (
+            #{category.parentId},
+            #{category.name}
+        )
+    </insert>
+
+    <!-- 更新类目 -->
+    <update id="editCate">
+        update w_category set parentId = #{category.parentId}, name = #{category.name} where id = #{id}
+    </update>
+
+    <!-- 删除类目 -->
+    <delete id="deleteCateByIds">
+        delete from w_category where id in
+        <foreach item="id" close=")" open="(" separator="," collection="ids">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

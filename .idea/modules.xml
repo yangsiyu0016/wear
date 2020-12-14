@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/admin_service/admin_service.iml" filepath="$PROJECT_DIR$/admin_service/admin_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin_web/admin_web.iml" filepath="$PROJECT_DIR$/admin_web/admin_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goods_service/goods_service.iml" filepath="$PROJECT_DIR$/goods_service/goods_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goods_web/goods_web.iml" filepath="$PROJECT_DIR$/goods_web/goods_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order_service/order_service.iml" filepath="$PROJECT_DIR$/order_service/order_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order_web/order_web.iml" filepath="$PROJECT_DIR$/order_web/order_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_service/user_service.iml" filepath="$PROJECT_DIR$/user_service/user_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_web/user_web.iml" filepath="$PROJECT_DIR$/user_web/user_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wear.iml" filepath="$PROJECT_DIR$/wear.iml" />
+    </modules>
+  </component>
+</project>

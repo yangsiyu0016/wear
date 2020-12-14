@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangong.admin_service.mapper.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.wangong.common.domain.menu.Menu">
+        <id column="id" property="id"/>
+        <result column="iconCls" property="iconCls"/>
+        <result column="title" property="title"/>
+        <result column="ctime" property="ctime"/>
+        <result column="parentId" property="parentId"/>
+        <result column="url" property="url"/>
+        <result column="name" property="name"/>
+        <result column="enabled" property="enabled"/>
+        <result column="level" property="level"/>
+        <result column="description" property="description"/>
+        <collection property="menus" column="id" ofType="com.wangong.admin_service.mapper.MenuMapper" select="getMenuByParentId"/>
+    </resultMap>
+
+    <!-- 获取树形菜单 -->
+    <select id="getTreeMenu" resultMap="BaseResultMap">
+        SELECT
+            m.*
+        FROM
+            menu m
+        LEFT JOIN
+            p_m pm
+        ON
+            m.`id` = pm.`menuId`
+        WHERE
+            pm.`positionId` = #{positionId}
+        AND
+            (parentId = '' OR parentId IS NULL)
+        and
+            enabled = 1
+        order by level asc
+
+    </select>
+
+
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from menu where enabled = 1
+    </select>
+
+    <!-- 根据父级id获取子集 -->
+    <select id="getMenuByParentId" resultMap="BaseResultMap">
+        SELECT * from menu where parentid = #{parentId} and enabled = 1
+    </select>
+
+    <!-- 根据id获取菜单数据 -->
+    <select id="getMenuById" resultMap="BaseResultMap">
+        select * from menu where id = #{id} and enabled = 1
+    </select>
+
+    <!-- 添加菜单 -->
+    <insert id="addMenu">
+        insert into menu(
+            id,
+            iconCls,
+            title,
+            ctime,
+            parentId,
+            url,
+            name,
+            enabled,
+            level,
+            description
+        ) values (
+            #{menu.id},
+            #{menu.iconCls},
+            #{menu.title},
+            #{menu.ctime},
+            #{menu.parentId},
+            #{menu.url},
+            #{menu.name},
+            #{menu.enabled},
+            #{menu.level},
+            #{menu.description}
+
+        )
+    </insert>
+
+    <!-- 修改菜单 -->
+    <update id="editMenu">
+        update menu set
+            iconCls = #{menu.iconCls},
+            title = #{menu.title},
+            parentId = #{menu.parentId},
+            url = #{menu.url},
+            name = #{menu.name},
+            description = #{menu.description}
+        where id = #{menu.id}
+    </update>
+
+    <!-- 根据id删除 -->
+    <delete id="deleteMenuById">
+        delete from menu where id  = #{id}
+    </delete>
+</mapper>
