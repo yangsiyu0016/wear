@@ -5,37 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/goods_service/src/main/resources/mapper/GoodsDescMapper.xml" line="21" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b99402d-7d61-475b-a009-c97c7b89b85b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_tobato_fastdfs_client_1_26_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_coobird_thumbnailator_0_4_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_1_6_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_9_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_30.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wangong/common/domain/goods/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wangong/common/domain/goods/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/wangong/common/service/GoodsPictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/wangong/common/service/GoodsPictureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/mapper/GoodsPictureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/mapper/GoodsPictureMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsDescServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsDescServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsPictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsPictureServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/StockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/StockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_service/src/main/resources/mapper/GoodsPictureMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/goods_service/src/main/resources/mapper/GoodsPictureMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsDescController.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsDescController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsPictureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsPictureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goods_web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/goods_web/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="4b99402d-7d61-475b-a009-c97c7b89b85b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/order_service/target/" />
@@ -100,7 +70,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
+                <state relative-caret-position="459">
                   <caret line="153" column="24" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -135,7 +105,7 @@
             <entry file="file://$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsPictureServiceImpl.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="452">
-                  <caret line="80" column="19" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="19" />
+                  <caret line="80" column="19" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="19" />
                   <folding>
                     <element signature="e#1337#1338#0" expanded="true" />
                     <element signature="e#1398#1399#0" expanded="true" />
@@ -261,7 +231,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="174" />
     <option name="y" value="174" />
     <option name="width" value="1376" />
@@ -275,62 +245,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wear" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wear" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="goods_service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,7 +400,7 @@
       <workItem from="1607912499424" duration="4086000" />
       <workItem from="1607925517494" duration="1201000" />
       <workItem from="1607937280701" duration="3701000" />
-      <workItem from="1607993248631" duration="16545000" />
+      <workItem from="1607993248631" duration="16734000" />
     </task>
     <servers />
   </component>
@@ -501,11 +416,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134598000" />
+    <option name="totallyTimeSpent" value="134787000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -514,7 +428,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" weight="0.19829424" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.19829424" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
@@ -931,7 +845,7 @@
     <entry file="file://$PROJECT_DIR$/goods_service/src/main/java/com/wangong/goods_service/service/impl/GoodsPictureServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
-          <caret line="80" column="19" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="19" />
+          <caret line="80" column="19" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="19" />
           <folding>
             <element signature="e#1337#1338#0" expanded="true" />
             <element signature="e#1398#1399#0" expanded="true" />
@@ -958,7 +872,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/goods_web/src/main/java/com/wangong/goods_web/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
+        <state relative-caret-position="459">
           <caret line="153" column="24" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
