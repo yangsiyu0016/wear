@@ -7,6 +7,7 @@ import com.wangong.goods_service.mapper.GoodsDescMapper;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Resource;
+import java.util.UUID;
 
 /**
  * 商品详情描述逻辑层实现
@@ -34,6 +35,7 @@ public class GoodsDescServiceImpl implements GoodsDescService {
      */
     @Override
     public void addDesc(GoodsDesc goodsDesc) {
+        goodsDesc.setId(UUID.randomUUID().toString());
         goodsDescMapper.addDesc(goodsDesc);
     }
 

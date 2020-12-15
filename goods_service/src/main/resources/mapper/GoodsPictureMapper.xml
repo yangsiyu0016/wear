@@ -50,6 +50,11 @@
         where id = #{goodsPicture.id}
     </update>
 
+    <!-- 根据图片路径删除 -->
+    <delete id="deleteByPicUrl">
+        delete from w_goods_picture where picUrl = #{picUrl}
+    </delete>
+
     <!-- 删除商品图片 -->
     <delete id="deleteGoodsPic">
         delete from w_goods_picture where id = #{id}

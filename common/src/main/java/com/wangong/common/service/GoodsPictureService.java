@@ -1,6 +1,7 @@
 package com.wangong.common.service;
 
 import com.wangong.common.domain.goods.GoodsPicture;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -46,5 +47,11 @@ public interface GoodsPictureService {
      * @param goodsId
      */
     void deleteGoodsPicByGoodsId(String goodsId);
+
+    /**
+     * 根据图片路径删除
+     * @param picUrl
+     */
+    void deleteByPicUrl(String picUrl);
 
 }

@@ -6,4 +6,19 @@ spring:
     port: 6379
     timeout: 2000s
     password: root
+wear:
+  upload:
+    allowTypes:
+      - image/jpeg
+      - image/png
+      - image/bmp
+    baseUrl: http://localhost:9097/
+fdfs:
+  connect-timeout: 600
+  so-timeout: 2500
+  thumb-image:
+    height: 60
+    width: 60
+  tracker-list:
+    - 127.0.0.1:9097
 

@@ -1,8 +1,7 @@
 package com.wangong.goods_web.controller;
 
-
-import com.wangong.common.domain.goods.GoodsDesc;
-import com.wangong.common.service.GoodsDescService;
+import com.wangong.common.domain.goods.Stock;
+import com.wangong.common.service.StockService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,28 +10,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 商品详情控制层
+ * 库存控制层
  */
 @Slf4j
 @RestController
-@RequestMapping("/goodsDesc")
-public class GoodsDescController {
+@RequestMapping("/stock")
+public class StockController {
 
     @Resource
-    private GoodsDescService goodsDescService;
+    private StockService stockService;
 
     /**
-     * 根据商品id获取商品详情
+     * 根据商品id获取库存
      * @param goodsId
      * @return
      */
-    @GetMapping("/getDescByGoodsId")
-    public Map<Object, Object> getDescByGoodsId(@RequestParam("goodsId") String goodsId) {
+    @GetMapping("/getStockByGoodsId")
+    public Map<Object, Object> getStockByGoodsId(@RequestParam("goodsId") String goodsId) {
         Map<Object, Object> map = new HashMap<>();
         try {
-            GoodsDesc goodsDesc = goodsDescService.getDescByGoodsId(goodsId);
+            Stock stock = stockService.getStockByGoodsId(goodsId);
             map.put("result", "success");
-            map.put("goodsDesc", goodsDesc);
+            map.put("stock", stock);
         }catch (Exception e) {
             map.put("result", "exception");
             map.put("exception", e.getMessage());
@@ -41,17 +40,16 @@ public class GoodsDescController {
     }
 
     /**
-     * 添加商品详情
-     * @param goodsDesc
+     * 添加库存
+     * @param stock
      * @return
      */
     @PostMapping("/add")
-    public Map<Object, Object> addDesc(@RequestBody GoodsDesc goodsDesc) {
+    public Map<Object, Object> addStock(@RequestBody Stock stock) {
         Map<Object, Object> map = new HashMap<>();
         try {
-            goodsDescService.addDesc(goodsDesc);
+            stockService.addStock(stock);
             map.put("result", "success");
-            map.put("goodsDesc", goodsDesc);
         }catch (Exception e) {
             map.put("result", "exception");
             map.put("exception", e.getMessage());
@@ -60,17 +58,16 @@ public class GoodsDescController {
     }
 
     /**
-     * 更新商品详情
-     * @param goodsDesc
+     * 更新库存
+     * @param stock
      * @return
      */
     @PostMapping("/edit")
-    public Map<Object,Object> editDesc(@RequestBody GoodsDesc goodsDesc) {
+    public Map<Object, Object> editStock(@RequestBody Stock stock) {
         Map<Object, Object> map = new HashMap<>();
         try {
-            goodsDescService.editDesc(goodsDesc);
+            stockService.editStock(stock);
             map.put("result", "success");
-            map.put("goodsDesc", goodsDesc);
         }catch (Exception e) {
             map.put("result", "exception");
             map.put("exception", e.getMessage());
@@ -79,15 +76,15 @@ public class GoodsDescController {
     }
 
     /**
-     * 删除详情
+     * 根据商品id删除库存
      * @param goodsId
      * @return
      */
     @GetMapping("/delete")
-    public Map<Object,Object> deleteDesc(@RequestParam("goodsId") String goodsId) {
+    public Map<Object, Object> deleteStock(@RequestParam("goodsId") String goodsId) {
         Map<Object, Object> map = new HashMap<>();
         try {
-            goodsDescService.deleteDesc(goodsId);
+            stockService.deleteStock(goodsId);
             map.put("result", "success");
         }catch (Exception e) {
             map.put("result", "exception");

@@ -7,6 +7,7 @@ import com.wangong.goods_service.mapper.StockMapper;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Resource;
+import java.util.UUID;
 
 /**
  * 库存逻辑层实现类
@@ -33,6 +34,7 @@ public class StockServiceImpl implements StockService {
      */
     @Override
     public void addStock(Stock stock) {
+        stock.setId(UUID.randomUUID().toString());
         stockMapper.addStock(stock);
     }
 

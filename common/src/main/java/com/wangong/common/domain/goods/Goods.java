@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 商品实体类
@@ -32,5 +33,5 @@ public class Goods implements Serializable {
     String stockId;
     Stock stock;
     GoodsDesc goodsDesc;
-    GoodsPicture goodsPicture;
+    List<GoodsPicture> goodsPictures;
 }

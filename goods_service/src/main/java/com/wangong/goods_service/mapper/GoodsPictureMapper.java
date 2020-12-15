@@ -49,4 +49,10 @@ public interface GoodsPictureMapper {
      * @param goodsId
      */
     void deleteGoodsPicByGoodsId(@Param("goodsId") String goodsId);
+
+    /**
+     * 根据图片路径删除
+     * @param picUrl
+     */
+    void deleteByPicUrl(@Param("picUrl") String picUrl);
 }
